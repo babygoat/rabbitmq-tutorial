@@ -1,0 +1,3 @@
+FROM rabbitmq:3.7.14
+
+EXPOSE 5672
