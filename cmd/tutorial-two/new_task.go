@@ -3,6 +3,7 @@ package main
 import (
 	"log"
 	"os"
+	"strings"
 
 	"github.com/streadway/amqp"
 )
@@ -42,7 +43,7 @@ func main() {
 		"task_queue", // queue name
 		true,         // durable (mesage will not be restored when the server restarts)
 		false,        // delete when unused (no consumer)
-		false,        // exclusive queue (only accessible to the declarer)
+		false,        // non-exclusive queue (accessible to all the connections)
 		false,        // no-wait (?)
 		nil,          // arguments
 	)
